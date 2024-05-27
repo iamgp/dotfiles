@@ -1,0 +1,19 @@
+Include /Users/garethprice/.colima/ssh_config
+
+## START GITPOD INTEGRATION
+## This section is managed by Gitpod. Any manual changes will be lost.
+Include "code_gitpod.d/config"
+## END GITPOD INTEGRATION
+
+Include ~/.orbstack/ssh/config
+
+Host iamgp.com
+  HostName iamgp.com
+  User gareth
+
+Host *
+  IdentityAgent "~/.1password/agent.sock"
+
+# Fig ssh integration. Keep at the bottom of this file.
+Match all
+  Include ~/.fig/ssh

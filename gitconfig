@@ -1,0 +1,25 @@
+[user]
+	name = Gareth Price
+	email = gareth.price@oxb.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEI/K78yfOD3wsFRociQY7RsXbZvNwklPRMDaeuIECfA
+[mergetool]
+	keepBackup = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+[core]
+	excludesfile = /Users/garethprice/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /private/var/folders/6q/gpqfhq0s19qd939b3lf83z6r0000gn/T/AppTranslocation/0AE5DC75-6582-46FF-8E5B-B188FF4490E6/d/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
