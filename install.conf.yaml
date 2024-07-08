@@ -1,11 +1,39 @@
-- clean: ['~']
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- shell:
+    - description: Validating sudo credentials
+      command: "sudo --validate"
 
 - link:
     ~/.gitconfig: gitconfig
     ~/.ssh/config:
-        path: ssh/config
-        create: true
+      path: ssh/config
+      create: true
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
+    ~/.config/nvim:
+      path: nvim
+      create: true
+    ~/.tmux:
+      path: tmux
+      create: true
+    ~/.config/tmuxinator:
+      path: tmuxinator
+      create: true
+    ~/.config/ohmyposh:
+      path: ohmyposh
+      create: true
+    ~/.config/alacritty:
+      path: alacritty
+      create: true
 
+- create:
+    - ~/.config/nvim/undo
 
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [source $HOME/.zshrc, source new zshrc]
