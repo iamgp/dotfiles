@@ -9,9 +9,11 @@ plugins=(
 
 # PATH
 export PATH="$HOME/go/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/sbin"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export PATH="$PATH:/opt/homebrew/bin"
+
 
 # Prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
@@ -77,6 +79,13 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+setopt auto_list # automatically list choices on ambiguous completion
+setopt auto_menu # automatically use menu completion
+setopt always_to_end # move cursor to end if word had one match
+setopt hist_reduce_blanks # remove superfluous blanks from history items
+setopt inc_append_history # save history entries as soon as they are entered
+setopt share_history # share history between different instances of the shell
+setopt auto_cd # cd by typing directory name if it's not a command
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -90,8 +99,10 @@ alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
 alias lzd='lazydocker'
-
+alias tmux='tmux -f ~/.tmux/tmux.conf'
 unalias g
 
-# tmux
-source $HOME/.config/tmuxinator/tmuxinator.zsh
+export PATH="/opt/homebrew/bin:$PATH"
+
+# # tmux
+# source $HOME/.config/tmuxinator/tmuxinator.zsh

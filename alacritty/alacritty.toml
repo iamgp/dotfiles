@@ -63,7 +63,7 @@ TERM = "xterm-256color"
 size = 13
 
 [font.bold]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [font.glyph_offset]
@@ -71,10 +71,10 @@ x = 0
 y = 0
 
 [font.italic]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 
 [font.normal]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [font.offset]

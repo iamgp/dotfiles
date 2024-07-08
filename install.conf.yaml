@@ -18,6 +18,9 @@
     ~/.config/nvim:
       path: nvim
       create: true
+    ~/.tmux.conf:
+      path: tmux/tmux.conf
+      create: true
     ~/.tmux:
       path: tmux
       create: true
@@ -31,9 +34,8 @@
       path: alacritty
       create: true
 
-- create:
-    - ~/.config/nvim/undo
+# - create:
+#     - ~/.config/nvim/undo
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
     - [source $HOME/.zshrc, source new zshrc]
