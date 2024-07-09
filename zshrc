@@ -99,7 +99,7 @@ alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
 alias lzd='lazydocker'
-alias tmux='tmux -f ~/.tmux/tmux.conf'
+alias tmux='tmux -f ~/.tmux.conf'
 unalias g
 
 export PATH="/opt/homebrew/bin:$PATH"
